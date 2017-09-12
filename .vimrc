@@ -60,8 +60,12 @@ function! CurDir( )
     let curdir = substitute( getcwd( ), $HOME, "~", "g")
     return curdir
 endfunction 
+"set statusline=%t\ %y\ format:\ %{&ff};\ [e%c,%l]
 
 set statusline=[%n]\ %f%m%r%h\ \|\ \ pwd:\ %{CurDir()}\ \ \|%=\|\ %l,%c\ %p%%\ \|\ ascii=%b,hex=%b%{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}\ \|\ %{$USER}\ @\ %{hostname()}\
+
+
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 
 set foldenable  "允许折叠
