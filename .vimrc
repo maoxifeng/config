@@ -16,14 +16,14 @@ syntax on "语法高亮
 "
 set confirm "在处理未保存或只读文件的时候，弹出确认框
 "
-set tabstop=4 "tab键的宽度
+set tabstop=4 "tab键显示的宽度
 "set softtabstop=4
 set shiftwidth=4 "统一缩进为4
-set expandtab "不要用空格替代制表符
+set expandtab "不要用空格替代制表符,讲tab键自动展开成空格
 "
 set number "显示行号
 set history=50  "历史纪录数
-"set hlsearch
+set hlsearch
 set incsearch "搜素高亮,搜索逐渐高亮
 "
 set relativenumber
@@ -49,6 +49,10 @@ set matchtime=5 "对应括号高亮时间(单位是十分之一秒)
 set autowrite "在切换buffer时自动保存当前文件
 "
 set wildmenu  "增强模式中的命令行自动完成操作
+
+set colorcolumn=81 "设置80字符提醒
+
+
 
 
 "set paste 
