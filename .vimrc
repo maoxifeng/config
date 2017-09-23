@@ -5,22 +5,37 @@ set backspace=2
 "
 syntax on "语法高亮
 "
+set confirm "在处理未保存或只读文件的时候，弹出确认框
+
+
+
 ""用浅色高亮当前行
 "autocmd InsertLeave * se nocul
 "autocmd InsertEnter * se cul
 "
 ""set cursorline 
-"set smartindent "智能对齐
-"
-"set autoindent "自动对齐
-"
-set confirm "在处理未保存或只读文件的时候，弹出确认框
-"
+
+
+"set autoindent "自动对齐, 每行的缩进值与上一行相等，使用 set noautoindent 可以取消设置, 当你在输入状态用回车键插入一个新行，或者在 normal 状态用 o 或者 O 插入一个新行时，autoindent 会自动地将当前行的缩进拷贝到新行，也就是 自动对齐
+
+"set cindent，它会按照 C 语言的语法，自动地调整缩进的长度，比如，当你输入了半条语句然后回车时，缩进会自动增加一个 TABSTOP 值，当你键入了一个右花括号时，会自动减少一个 TABSTOP 值。
+
+set smartindent  "在这种缩进模式中，每一行都和前一行有相同的缩进量，同时这种缩进形式能正确的识别出花括号，当遇到右花括号（}），则取消缩进形式。此外还增加了识别C语言关键字的功能。如果一行是以#开头的，那么这种格式将会被特殊对待而不采用缩进格式。
+
+
+
+
 set tabstop=4 "tab键显示的宽度
-"set softtabstop=4
+set softtabstop=4  "软制表符表示在Insert模式的时候按退格键时退回缩进的长度，当使用expandtab 时特别有用。
 set shiftwidth=4 "统一缩进为4
 set expandtab "不要用空格替代制表符,讲tab键自动展开成空格
-"
+
+"可使用如下命令来对设置只对特定类型文件启用expandtab，
+if has("autocmd")
+    autocmd BufRead,BufNewFile *.c, *.h, *.py set expandtab
+endif
+
+
 set number "显示行号
 set history=50  "历史纪录数
 set hlsearch
